@@ -6,15 +6,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <a>Click 👇 to know </a>
         <a
           className="App-link"
           href="https://linktr.ee/SahilUmeshBhandari"
-          target="_blank"
-          rel="noopener noreferrer"
+          target="_self"
         >
           About Me
         </a>
