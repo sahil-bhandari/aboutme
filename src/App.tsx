@@ -1,10 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Background from './assets/background';
 
 function App() {
   return (
     <div className="App">
+      <Background/>
       <header className="App-header">
         <a>Click 👇 to know </a>
         <a
