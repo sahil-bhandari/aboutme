@@ -9,22 +9,25 @@ export default function Intro() {
 
   useEffect(() => {
     const handleWindowResize = () => {
-      if(window.innerWidth>720){
+      if (window.innerWidth > 720) {
         setisDesktop(true);
-      }else{
+      } else {
         setisDesktop(false);
       }
     };
-    window.addEventListener('resize', handleWindowResize);
+    window.addEventListener("resize", handleWindowResize);
     return () => {
-      window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener("resize", handleWindowResize);
     };
   });
 
   return (
     <>
       {loaded ? <div>Loading...</div> : null}
-      <div id="home" className={isDesktop ? "overviewdesktop" : "overviewmobile"}>
+      <div
+        id="home"
+        className={isDesktop ? "overviewdesktop" : "overviewmobile"}
+      >
         <div className={isDesktop ? "cardviewdesktop" : "cardviewmobile"}>
           <img src={profile} alt="profile" onLoad={() => setLoaded(false)} />
         </div>
@@ -43,12 +46,14 @@ export default function Intro() {
 
           <div className="footerfield">
             <a
-              className="App-link"
               rel="noreferrer"
               href="https://drive.google.com/file/d/17lEXXo8KHI_zRlFckyCg5Q2LUFczUlEq/view?usp=share_link"
               target="_self"
             >
-              Go to My Resume
+              <button class="button-cover" role="button">
+                <span class="text">👉 My Resume</span>
+                <span>Check it out</span>
+              </button>
             </a>
             <a
               className="App-link"
