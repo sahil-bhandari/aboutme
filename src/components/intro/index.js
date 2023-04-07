@@ -50,8 +50,8 @@ export default function Intro() {
               href="https://drive.google.com/file/d/17lEXXo8KHI_zRlFckyCg5Q2LUFczUlEq/view?usp=share_link"
               target="_self"
             >
-              <button class="button-cover" role="button">
-                <span class="text">👉 My Resume</span>
+              <button className="button-cover">
+                <span>👉 My Resume</span>
                 <span>Check it out</span>
               </button>
             </a>
