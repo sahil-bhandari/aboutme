@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 
-import profile from "../../assets/image/profile.svg";
 import "./styles.css";
+import Socials from "../socials";
 
 export default function Intro() {
-  const [loaded, setLoaded] = useState(true);
   const [isDesktop, setisDesktop] = useState(true);
 
   useEffect(() => {
@@ -23,15 +22,11 @@ export default function Intro() {
 
   return (
     <>
-      {loaded ? <div>Loading...</div> : null}
       <div
         id="home"
         className={isDesktop ? "overviewdesktop" : "overviewmobile"}
       >
-        <div className={isDesktop ? "cardviewdesktop" : "cardviewmobile"}>
-          <img src={profile} alt="profile" onLoad={() => setLoaded(false)} />
-        </div>
-        <div className={isDesktop ? "cardviewdesktop" : "cardviewmobile"}>
+        <div className={isDesktop ? "cardviewdesktop" : "cardviewmobile"} >
           <div>
             <h1>Hi, I'm</h1>
             <h1>Sahil Bhandari</h1>
@@ -55,13 +50,7 @@ export default function Intro() {
                 <span>Check it out</span>
               </button>
             </a>
-            <a
-              className="App-link"
-              href="https://linktr.ee/SahilUmeshBhandari"
-              target="_self"
-            >
-              Click here to know more
-            </a>
+            <Socials />
           </div>
         </div>
       </div>
