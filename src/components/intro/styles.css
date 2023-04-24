@@ -26,8 +26,8 @@
   border-width: 0;
   border-style: solid;
   border-color: #e5e7eb;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
 }
 
 .cardviewdesktop {
@@ -42,14 +42,13 @@
 }
 
 .cardviewmobile {
-  padding: 1rem;
+  padding: 0.1rem;
   width: 90%;
   max-height: 100%;
   tab-size: 4;
   line-height: inherit;
   margin: 7px;
   font-size: 1rem;
-  line-height: 1.75rem;
 }
 
 .footerfield {

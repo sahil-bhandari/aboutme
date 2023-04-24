@@ -4,11 +4,11 @@ import "./styles.css";
 import Socials from "../socials";
 
 export default function Intro() {
-  const [isDesktop, setisDesktop] = useState(true);
+  const [isDesktop, setisDesktop] = useState(false);
 
   useEffect(() => {
     const handleWindowResize = () => {
-      if (window.innerWidth > 720) {
+      if (window.innerWidth > 520) {
         setisDesktop(true);
       } else {
         setisDesktop(false);
@@ -18,7 +18,7 @@ export default function Intro() {
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
-  });
+  },[window]);
 
   return (
     <>

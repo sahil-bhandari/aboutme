@@ -18,16 +18,10 @@ const Socials = () => {
         <a href="https://github.com/sahil-bhandari" className="social">
           <FontAwesomeIcon icon={faGithub} size="2x" />
         </a>
-        <a
-          href="https://www.hackerrank.com/sahil_bhandari?hr_r=1"
-          className="social"
-        >
+        <a href="https://www.hackerrank.com/sahil_bhandari?hr_r=1" className="social">
           <FontAwesomeIcon icon={faHackerrank} size="2x" />
         </a>
-        <a
-          href="https://www.xing.com/profile/Sahil_Bhandari4"
-          className="social"
-        >
+        <a href="https://www.xing.com/profile/Sahil_Bhandari4" className="social">
           <FontAwesomeIcon icon={faXing} size="2x" />
         </a>
         <a href="https://www.facebook.com/saheel.supersoul" className="social">
@@ -36,10 +30,7 @@ const Socials = () => {
         <a href="https://twitter.com/sahil_bhandari_" className="social">
           <FontAwesomeIcon icon={faTwitter} size="2x" />
         </a>
-        <a
-          href="https://www.linkedin.com/in/sahilumeshbhandari/"
-          className="social"
-        >
+        <a href="https://www.linkedin.com/in/sahilumeshbhandari/" className="social" >
           <FontAwesomeIcon icon={faLinkedin} size="2x" />
         </a>
       </div>
