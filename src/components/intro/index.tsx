@@ -18,7 +18,7 @@ export default function Intro() {
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
-  },[window]);
+  }, [window]);
 
   return (
     <>
@@ -28,14 +28,15 @@ export default function Intro() {
       >
         <div className={isDesktop ? "cardviewdesktop" : "cardviewmobile"} >
           <div>
-            <h1>Hi, I'm</h1>
-            <h1>Sahil Bhandari</h1>
-            <p>IT Professional</p>
+            <h1>Hi, I'm Sahil Bhandari</h1>
+            <h2>IT Professional</h2>
             <p>
               Enthusiastic and motivated individual with a degree in Computer
               Engineering discipline. Willingness to acquire skills related to
               Front-end Development and DevOps. A sound background in computer
-              engineering and data communications.
+              engineering and data communications. If you're looking for a 
+              dedicated and experienced mobile application developer who can 
+              bring your ideas to life, I would love to connect with you.
             </p>
           </div>
 
