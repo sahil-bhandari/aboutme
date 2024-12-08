@@ -1,130 +1,82 @@
-.overviewdesktop {
+.overview {
   position: relative;
-  width: 97vw;
-  height: 97vh;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1rem;
-  align-items: center;
-  display: flex;
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-color: #e5e7eb;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.overviewmobile {
-  position: relative;
-  width: 97vw;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  align-items: center;
-  display: flex;
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-color: #e5e7eb;
-  padding-left: 0.1rem;
-  padding-right: 0.1rem;
-}
-
-.cardviewdesktop {
-  padding: 1rem;
-  width: 50%;
-  max-height: 100%;
-  tab-size: 4;
-  line-height: inherit;
-  margin: 7px;
-  font-size: 1.1rem;
-  line-height: 1.75rem;
-}
-
-.cardviewmobile {
-  padding: 0.1rem;
-  width: 90%;
-  max-height: 100%;
-  tab-size: 4;
-  line-height: inherit;
-  margin: 7px;
-  font-size: 1rem;
-}
-
-.footerfield {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  gap: 1rem;
-  color: white;
-}
-
-.button-cover {
-  position: relative;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  color: #ffffff;
+  padding: 2rem;
+  box-sizing: border-box;
   overflow: hidden;
-  display: inline-block;
-  font-size: 15px;
-  line-height: 15px;
-  padding: 18px 18px 17px;
-  text-decoration: none;
-  cursor: pointer;
-  background: #803F3F69;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  min-width: 15vw;
-  text-align: center;
-  color: white;
+}
+
+/* Header Text Styling */
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 790;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: #b3c7ff;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 1rem auto;
+  padding: 4px;
+  color: #d6e4ff;
+}
+
+/* Button Styling */
+.button-cover {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 12px 24px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #012469, #9b9c9d);
   border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.button-cover span:first-child {
-  position: relative;
-  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
-  z-index: 10;
+.button-cover:hover {
+  transform: scale(1.05);
+  background: linear-gradient(115deg, #9b9c9d, #012469); 
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.button-cover span:last-child {
-  color: white;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
-  z-index: 100;
-  opacity: 0;
-  top: 50%;
-  left: 50%;
-  transform: translateY(225%) translateX(-50%);
-  height: 14px;
-  line-height: 13px;
-  text-align: center;
-}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.9rem;
+  }
 
-.button-cover:after {
-  content: "";
-  position: absolute;
-  bottom: -50%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #012469;
-  transform-origin: bottom center;
-  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
-  transform: skewY(9.3deg) scaleY(0);
-  z-index: 50;
-  justify-content: center;
-  text-align: center;
-}
+  h2 {
+    font-size: 1.6rem;
+  }
 
-.button-cover:hover:after {
-  transform-origin: bottom center;
-  transform: skewY(9.3deg) scaleY(2);
-}
+  p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
 
-.button-cover:hover span:last-child {
-  transform: translateX(-50%) translateY(-100%);
-  opacity: 1;
-  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+  button-cover {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    background: #012469;
+  }
 }
