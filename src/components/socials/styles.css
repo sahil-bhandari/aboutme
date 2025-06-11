@@ -1,26 +1,140 @@
+/* Modern Social Links Styles */
 .social-container {
-  background: #eeeeee00;
-  padding: 25px 50px;
+  background: transparent;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 a.social {
-  margin: 0 1rem;
-  transition: transform 250ms;
-  display: inline-block;
-  color: beige;
-  padding: 7px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Hover effects */
+a.social::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+a.social:hover::before {
+  opacity: 1;
 }
 
 a.social:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.05);
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
 }
 
+a.social:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Focus state for accessibility */
+a.social:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Specific social platform colors on hover */
+a.social[href*="linkedin"]:hover {
+  background: rgba(10, 102, 194, 0.2);
+  box-shadow: 0 8px 25px rgba(10, 102, 194, 0.3);
+}
+
+a.social[href*="github"]:hover {
+  background: rgba(51, 51, 51, 0.2);
+  box-shadow: 0 8px 25px rgba(51, 51, 51, 0.3);
+}
+
+a.social[href*="twitter"]:hover,
+a.social[href*="x.com"]:hover {
+  background: rgba(29, 161, 242, 0.2);
+  box-shadow: 0 8px 25px rgba(29, 161, 242, 0.3);
+}
+
+a.social[href*="instagram"]:hover {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.2), rgba(255, 204, 119, 0.2));
+  box-shadow: 0 8px 25px rgba(225, 48, 108, 0.3);
+}
+
+a.social[href*="youtube"]:hover {
+  background: rgba(255, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
+}
+
+a.social[href*="discord"]:hover {
+  background: rgba(114, 137, 218, 0.2);
+  box-shadow: 0 8px 25px rgba(114, 137, 218, 0.3);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .social-container {
-    gap: 0.8rem;
+    padding: 1rem 0;
+    gap: 0.75rem;
   }
 
   a.social {
-    font-size: 1.2rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-container {
+    gap: 0.5rem;
+  }
+
+  a.social {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+}
+
+/* Animation for container load */
+.social-container {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

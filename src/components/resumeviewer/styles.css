@@ -1,0 +1,284 @@
+/* Resume Viewer Styles */
+.resume-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Social-style button for resume view */
+.social-style-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.social-style-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.social-style-btn:hover::before {
+  opacity: 1;
+}
+
+.social-style-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
+}
+
+.social-style-btn:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.social-style-btn:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.resume-download {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3) !important;
+}
+
+.resume-download:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Modal Styles */
+.resume-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.resume-modal {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  width: 90%;
+  max-width: 900px;
+  height: 90vh;
+  max-height: 800px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.resume-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 24px 24px 0 0;
+}
+
+.resume-modal-header h3 {
+  margin: 0;
+  font-family: "Inter", "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #c7d2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.download-btn,
+.close-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+}
+
+.download-btn {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.download-btn:hover {
+  background: rgba(16, 185, 129, 0.3);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
+  color: #ffffff;
+}
+
+.close-btn {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.close-btn:hover {
+  background: rgba(239, 68, 68, 0.3);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.25);
+  color: #ffffff;
+}
+
+.resume-viewer-container {
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0 0 24px 24px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.resume-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0 0 24px 24px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .resume-actions {
+    gap: 0.75rem;
+  }
+
+  .social-style-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .resume-modal {
+    width: 95%;
+    height: 95vh;
+    margin: 0;
+  }
+
+  .resume-modal-header {
+    border-radius: 24px 24px 0 0;
+    padding: 1rem 1.5rem;
+  }
+
+  .resume-modal-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .download-btn,
+  .close-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-actions {
+    gap: 0.5rem;
+  }
+
+  .social-style-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+
+  .resume-modal-overlay {
+    padding: 0.5rem;
+  }
+
+  .resume-modal {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .resume-modal-header {
+    border-radius: 0;
+    padding: 1rem;
+  }
+
+  .resume-viewer-container {
+    border-radius: 0;
+  }
+
+  .resume-iframe {
+    border-radius: 0;
+  }
+}

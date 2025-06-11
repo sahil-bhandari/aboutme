@@ -1,82 +1,215 @@
+/* Modern Portfolio Styles - 2025 */
 .overview {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: transparent;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
   color: #ffffff;
   padding: 2rem;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* Header Text Styling */
+/* Glassmorphism backdrop */
+.overview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Content container with glassmorphism */
+.overview > div {
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 100%;
+}
+
+/* Modern Typography */
 h1 {
-  font-family: "Poppins", sans-serif;
-  font-size: 3rem;
-  font-weight: 790;
-  margin: 0;
+  font-family: "Inter", "Poppins", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #c7d2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
-  color: #b3c7ff;
+  font-family: "Inter", "Poppins", sans-serif;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 500;
+  margin: 0 0 2rem 0;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
 p {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  max-width: 700px;
-  margin: 1rem auto;
-  padding: 4px;
-  color: #d6e4ff;
+  font-family: "Inter", "Roboto", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  color: #cbd5e1;
+  font-weight: 400;
+  opacity: 0.95;
 }
 
-/* Button Styling */
+/* Footer styling */
+.footerfield {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Modern Button Design */
 .button-cover {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Poppins", sans-serif;
   font-size: 1rem;
-  padding: 12px 24px;
+  font-weight: 600;
+  padding: 16px 32px;
   color: #ffffff;
-  background: linear-gradient(135deg, #012469, #9b9c9d);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-cover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease-in-out;
+}
+
+.button-cover:hover::before {
+  left: 100%;
 }
 
 .button-cover:hover {
-  transform: scale(1.05);
-  background: linear-gradient(115deg, #9b9c9d, #012469); 
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, #7c3aed 0%, #ec4899 50%, #f59e0b 100%);
 }
 
+.button-cover:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+  .overview {
+    padding: 1.5rem;
+    min-height: 100vh;
+  }
+
+  .overview > div {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+
   h1 {
-    font-size: 1.9rem;
+    margin-bottom: 0.75rem;
   }
 
   h2 {
-    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1rem, 4vw, 1.25rem);
   }
 
   p {
-    font-size: 1.1rem;
-    line-height: 1.4;
+    margin-bottom: 2rem;
+    line-height: 1.6;
   }
 
-  button-cover {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-    background: #012469;
+  .footerfield {
+    gap: 1.5rem;
   }
+
+  .button-cover {
+    font-size: 0.9rem;
+    padding: 14px 28px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overview {
+    padding: 1rem;
+  }
+
+  .overview > div {
+    padding: 1.5rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .button-cover {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Subtle animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overview > div {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Focus states for accessibility */
+.button-cover:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
 }

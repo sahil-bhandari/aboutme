@@ -17,7 +17,7 @@
   left: 0;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #0040c1, #001d3d);
+  background: transparent;
   overflow: hidden;
 }
 .background li {
@@ -26,7 +26,7 @@
   left: 45vw;
   width: 10px;
   height: 10px;
-  border: solid 1px #0039ad;
+  border: solid 1px #951deb;
   color: transparent;
   transform-origin: top left;
   transform: scale(0) rotate(0deg) translate(-50%, -50%);
@@ -50,21 +50,21 @@
   animation-delay: 4s;
   left: 69vw;
   top: 7vh;
-  border-color: #0046d4;
+  border-color: #952bf2;
 }
 
 .background li:nth-child(3) {
   animation-delay: 6s;
   left: 15vw;
   top: 30vh;
-  border-color: #0046d4;
+  border-color: #82209d;
 }
 
 .background li:nth-child(4) {
   animation-delay: 8s;
   left: 86vw;
   top: 95vh;
-  border-color: #0046d4;
+  border-color: #792ef0;
 }
 
 .background li:nth-child(5) {
