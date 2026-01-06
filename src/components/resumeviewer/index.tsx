@@ -64,7 +64,7 @@ const ResumeModal = memo(({
               title="Download Resume"
               aria-label="Download Resume"
             >
-              ⬇️
+              ↓
             </a>
             <button
               className="close-btn"
@@ -169,7 +169,7 @@ const ResumeViewer = ({
           type="button"
           aria-label={`View ${name}'s resume`}
         >
-          <span role="img" aria-label="eye">👁️</span>
+          {/* <span role="img" aria-label="eye">👁️</span> */}
           <span>View My Resume</span>
         </button>
       </div>
